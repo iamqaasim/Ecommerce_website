@@ -2,9 +2,6 @@
 # Render_template is used to render the html pages
 from flask import Blueprint, render_template
 
-# import a databse
-
-
 views = Blueprint('views',__name__)
 
 

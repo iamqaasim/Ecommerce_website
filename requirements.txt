@@ -3,3 +3,4 @@ gunicorn
 flask-login
 Flask-SQLAlchemy
 stripe
+Mongo

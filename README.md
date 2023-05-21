@@ -7,7 +7,7 @@ A simple Ecommerce site in development..
 ## Authors
 
 - [@iamqaasim](https://github.com/iamqaasim)
-- [@Johnmalik](https://github.com/johnmalik)
+- [@Johnmalek](https://github.com/johnmalek)
 
 ## Tech Stack
 

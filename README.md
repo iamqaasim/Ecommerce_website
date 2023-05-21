@@ -7,13 +7,13 @@ A simple Ecommerce site in development..
 ## Authors
 
 - [@iamqaasim](https://github.com/iamqaasim)
-- [@name](link to github)
+- [@Johnmalik](https://github.com/johnmalik)
 
 ## Tech Stack
 
 **Frontend:** HTML, Bootstrap
 
-**Backend:** Flask, Stripe, SQLite
+**Backend:** Flask, Stripe, MongoDB
 
 **Web host:** Render
 

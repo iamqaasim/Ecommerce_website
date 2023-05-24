@@ -1,3 +1,10 @@
+<!-- 
+Variables coming into this template:
+
+count - the number of unique items in the store
+fetch - get data from database
+-->
+
 <!-- This page is inheriting everything from the base template -->
 {% extends "base.html" %}
 
@@ -7,5 +14,32 @@
 
 <!-- This block tag is overriding the content block tag from the base template -->
 {% block content%}
-    This is the testing template.
+  <h1>This is the testing template.</h1>
+
+  <p>Database total colllection count is {{count}}.</p>
+  
+  <p>Your Document was added to the database with ID:{{add}}.</p>
+
+  <p>Product {{updates}} was updated.</p>
+
+  <p>Product {{removed_product}} was removed.</p>
+
+  <p>Product ID is {{get_id}}</p>
+  
+  <p>Here is a list of all your products.
+    {%for product in all_products %}
+      <div>{{product['name']}}</div>
+    {% endfor %}
+  </p>
+
+  <p>Here is a list of all your products you tried to search.
+    {% if searched_products == []: %}
+      <div>Product not found</div>
+    {% else %}
+      {% for product in searched_products %}
+        <div>{{product['name']}}</div>
+      {% endfor %}
+    {% endif %}
+  </p>
+
 {% endblock %}

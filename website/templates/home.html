@@ -1,1 +1,18 @@
-This is the Home page
+<!-- 
+Variables coming into this template:
+
+variable - 
+
+-->
+
+<!-- This page is inheriting everything from the base template -->
+{% extends "base.html" %}
+
+<!-- This block tag is overriding the title block tag from the base template -->
+{% block title %} Testing {% endblock %}
+
+
+<!-- This block tag is overriding the content block tag from the base template -->
+{% block content%}
+  This is the Home page
+{% endblock %}

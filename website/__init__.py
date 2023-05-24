@@ -1,4 +1,6 @@
-#__init__.py converts the website folder into a python package so that we can export files
+'''
+Converts the website folder into a python package so that we can export data between files
+'''
 
 # Flask is used to create a quick website backend 
 from flask import Flask

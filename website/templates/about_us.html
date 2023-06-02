@@ -1,0 +1,28 @@
+<!-- 
+Variables coming into this template:
+
+variable - 
+
+-->
+
+<!-- This page is inheriting everything from the base template -->
+{% extends "base.html" %}
+
+<!-- This block tag is overriding the title block tag from the base template -->
+{% block title %} About Us {% endblock %}
+
+
+<!-- This block tag is overriding the content block tag from the base template -->
+{% block content%}
+<h1>This is the About us page</h1>
+
+<h2>This page should have 1 section</h2>
+
+<div>
+  
+  <ul>
+    <li><p>Short description of the site</p></li>
+  </ul>
+  
+</div>
+{% endblock %}

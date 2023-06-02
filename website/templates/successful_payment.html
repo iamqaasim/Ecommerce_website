@@ -1,0 +1,26 @@
+<!-- 
+Variables coming into this template:
+
+variable - 
+
+-->
+
+<!-- This page is inheriting everything from the base template -->
+{% extends "base.html" %}
+
+<!-- This block tag is overriding the title block tag from the base template -->
+{% block title %} Successful payment {% endblock %}
+
+
+<!-- This block tag is overriding the content block tag from the base template -->
+{% block content%}
+  <h1>This is the Successful payment page</h1>
+
+<h2>This page should have 1 section</h2>
+
+<div>
+  <p>
+    Simple UI that show successfull payment
+  </p>
+</div>
+{% endblock %}

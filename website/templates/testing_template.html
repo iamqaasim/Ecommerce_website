@@ -16,19 +16,19 @@ fetch - get data from database
 {% block content%}
   <h1>This is the testing template.</h1>
 
-  <p>Database total colllection count is {{count}}.</p>
+  <p>Database total colllection count is {{count_items}}.</p>
   
-  <p>Your Document was added to the database with ID:{{add}}.</p>
+  <p>Your Document was added to the database with ID:{{add_item}}.</p>
 
-  <p>Product {{updates}} was updated.</p>
+  <p>Product {{update_item}} was updated.</p>
 
-  <p>Product {{removed_product}} was removed.</p>
+  <p>Product {{removed_item}} was removed.</p>
 
   <p>Product ID is {{get_id}}</p>
   
   <p>Here is a list of all your products.
-    {%for product in all_products %}
-      <div>{{product['name']}}</div>
+    {%for item in all_items %}
+      <div>{{item['item_name']}}</div>
     {% endfor %}
   </p>
 
@@ -36,8 +36,8 @@ fetch - get data from database
     {% if searched_products == []: %}
       <div>Product not found</div>
     {% else %}
-      {% for product in searched_products %}
-        <div>{{product['name']}}</div>
+      {% for item in searched_items %}
+        <div>{{item['item_name']}}</div>
       {% endfor %}
     {% endif %}
   </p>

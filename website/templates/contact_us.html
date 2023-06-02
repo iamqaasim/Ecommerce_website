@@ -1,0 +1,39 @@
+<!-- 
+Variables coming into this template:
+
+variable - 
+
+-->
+
+<!-- This page is inheriting everything from the base template -->
+{% extends "base.html" %}
+
+<!-- This block tag is overriding the title block tag from the base template -->
+{% block title %} Contact Us {% endblock %}
+
+
+<!-- This block tag is overriding the content block tag from the base template -->
+{% block content%}
+<h1>This is the Contact page</h1>
+
+<h2>This form should have 4 fields</h2>
+
+<div>
+  
+  <ul>
+    <li><p>email</p></li>
+    <li><p>email subject title</p></li>
+    <li><p>user name</p></li>
+    <li><p>message</p></li>
+  </ul>
+  
+  <p>
+    Add a submittion button, when clicked it should take them to the Home page
+  </p>
+  
+  <p>
+    (eg similar to the demo site)
+  </p>
+  
+</div>
+{% endblock %}

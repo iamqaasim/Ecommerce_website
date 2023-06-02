@@ -1,131 +1,143 @@
 '''
 All CRUD and testing functions related to the database
-'''
 
+The variables can be changed according to your requirments
+'''
 # import db connection variables
 from .extensions import *
 
 
 # create functions ------------------------------------------------------------------------------------------------------
 
-def add_product(doc: dict):
+def add_item(collection_name, doc: dict):
   '''
-  add new products to the database
+  add new item to the database collection
+
+  collection_name: collection you want to use
+  doc: document you are adding
 
   return the ID of the inserted document
   '''
   try:
-    insert_doc = products.insert_one(doc)
+    insert_doc = collection_name.insert_one(doc)
     doc_id = insert_doc.inserted_id
     return doc_id
   except Exception:
-    print('Could not add product to database')
+    print('Could not add item to database')
+
 
 # read / find functions -------------------------------------------------------------------------------------------------
 
-def get_product_id(user_name: str, product_name: str):
+def get_item_id(collection_name, item: str, item_name: str):
   '''
-  get the product id based on the product name 
+  get the item ID based on the item and item name (this should be chnaged based on your requirements) 
 
-  product_name: name of the product
+  collection_name: collection you want to use
+
   
-  return product id
-  '''
-  product = products.find_one({"user": user_name, "name": product_name})
-  product_id = product['_id']
-  return product_id
-
-
-def find_all_products():
-  '''
-  find all the products in the database
-
-  returns a list of all the products
+  item:
+  item_name:
+  
+  return item id
   '''
   try:
-    all_products = list(products.find())
-    return all_products
+    item_found = collection_name.find_one({"item": item, "item_name": item_name})
+    item_id = item_found['_id']
+    return item_id
   except Exception:
-    print('No products in dataase')
+    print('No items in dataase')
+    return None
 
-def product_search(query: str):
+
+def find_all_items(collection_name):
   '''
-  strict search through products collection
+  find all the items in the collection_name
 
-  query: users searched text
+  returns a list of all the items found
+  '''
+  try:
+    all_items = list(collection_name.find())
+    return all_items
+  except Exception:
+    print('No items in dataase')
+    return None
+
+
+def item_search(collection_name, index_name: str, index_path: str, query: str):
+  '''
+  strict search through collection_name
+
+  This has to be set up in mongoDB atlas under the search tab
 
   return a list of the products
   '''
+  
   try:
-    result = products.aggregate([
+    result = collection_name.aggregate([
     {
       "$search":{
-        "index": "product_search",
+        "index": index_name,
         "text": {
           "query": query,
-          "path": "name"
+          "path": index_path
           }
         }
       }
     ])
     return list(result)
   except Exception:
-    print('Could not find product in database')
+    print('Could not find item in database')
   
 
 # update functions ------------------------------------------------------------------------------------------------------
 
-def update_product_data(user_name: str, product_name: str, doc: dict):
+def update_item_data(collection_name, item: str, item_name: str, doc: dict):
   '''
-  update product info
+  update item info
 
-  user_name: name of the user who wants to delete the product
-  product_name: nam eof the product user wants to delete
-
-  return ID of updated product 
+  return ID of updated item 
   '''
-  product_id = get_product_id(user_name, product_name)
-  _id = ObjectId(product_id)
+  item_id = get_item_id(collection_name, item, item_name)
+  _id = ObjectId(item_id)
   updates = {
     "$set": doc
   }
-  products.update_one({"_id": _id}, updates)
+  collection_name.update_one({"_id": _id}, updates)
   return _id
+
 
 # delete functions ------------------------------------------------------------------------------------------------------
 
-def remove_product(user_name: str, product_name: str):
+def remove_item( collection_name, item: str, item_name: str):
   '''
-  delete a product
-
-  user_name: name of the user who wants to delete the product
-  product_name: nam eof the product user wants to delete
+  delete a item
   
-  return deleted product ID
+  return deleted item ID
   '''
-  product_id = get_product_id(user_name, product_name)
-  _id = ObjectId(product_id)
-  products.delete_one({"_id": _id})
+  item_id = get_item_id(collection_name, item, item_name)
+  _id = ObjectId(item_id)
+  collection_name.delete_one({"_id": _id})
   return _id
+
 
 # other functions -------------------------------------------------------------------------------------------------------
 
-def total_item_count(collection):
+def total_item_count(collection_name):
   '''
   count the total amount of elements in the collection specified
 
-  collection: the database collection we want to count
+  collection_name: the database collection we want to count
   
   return the total items in collection
   '''
   try:
-    count = collection.count_documents({})
+    count = collection_name.count_documents({})
     return count
   except Exception:
     print('Could not count collection')
 
 
-# Database function testing ---------------------------------------------------------------------------------------------
+# Database connection test ---------------------------------------------------------------------------------------------
 
 def testing_db_conenction():
   '''

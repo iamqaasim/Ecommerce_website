@@ -1,12 +1,13 @@
 '''
 Main file that runs to create the flask application
 '''
-
 # Fetching function from ___init__.py which is inside the website(package) folder
 from website import create_app
 
+
 app = create_app()
-  
+
+
 if __name__ == '__main__':
   '''
   Website will run ONLY if you run this file (main.py)

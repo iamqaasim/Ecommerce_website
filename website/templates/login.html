@@ -1,0 +1,31 @@
+<!-- This page is inheriting everything from the base template -->
+{% extends "base.html" %}
+
+<!-- This block tag is overriding the title block tag from the base template -->
+{% block title %} Login {% endblock %}
+
+
+<!-- This block tag is overriding the content block tag from the base template -->
+{% block content%}
+<h1> Login </h1>
+
+<form>
+  
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default">Username</span>
+    <input name="username" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default">Password</span>
+    <input name="password" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+  </div>
+
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label name="check_box" class="form-check-label" for="exampleCheck1">I filled in all the fields</label>
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}

@@ -1,0 +1,38 @@
+<!-- 
+Variables coming into this template:
+
+variable - 
+
+-->
+
+<!-- This page is inheriting everything from the base template -->
+{% extends "base.html" %}
+
+<!-- This block tag is overriding the title block tag from the base template -->
+{% block title %} Women clothing {% endblock %}
+
+
+<!-- This block tag is overriding the content block tag from the base template -->
+{% block content%}
+<h1>This is the Women clothing page</h1>
+
+<h2>This page should have 3 sections</h2>
+
+<div>
+  
+  <ul>
+    <li><p>shirts & sweaters (list 5 only)</p></li>
+    <li><p>skirts & dresses (list 5 only)</p></li>
+    <li><p>jerseys & jackets (list 5 only)</p></li>
+  </ul>
+  
+  <p>
+    Add a button to each section, when clicked it should take them to a page that will display ALL the items from the section they clicked
+  </p>
+  
+  <p>
+    (eg if the shirts button is clicked redirect to page that displays ALL shirts only)
+  </p>
+  
+</div>
+{% endblock %}

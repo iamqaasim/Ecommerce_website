@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Ninth navbar example">
     <div class="container-xl">
-      <a class="navbar-brand" href="/testing">LOGO</a>
+      <a class="navbar-brand" href="#">SUUK</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07XL" aria-controls="navbarsExample07XL" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -34,6 +34,7 @@
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="{{url_for('auth.signup')}}">Sign Up</a></li>
               <li><a class="dropdown-item" href="{{url_for('auth.login')}}">Login</a></li>
+              <li><a class="dropdown-item" href="{{url_for('auth.logout')}}">Logout</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -42,6 +43,14 @@
               <li><a class="dropdown-item" href="{{url_for('pay.checkout')}}">Stripe checkout</a></li>
               <li><a class="dropdown-item" href="{{url_for('pay.success')}}">Sucessful payment</a></li>
               <li><a class="dropdown-item" href="{{url_for('pay.cancel')}}">Cancel payment</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="{{url_for('views.accessories')}}" data-bs-toggle="dropdown" aria-expanded="false">Testing</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{{url_for('test.database')}}">Database tests</a></li>
+              <li><a class="dropdown-item" href="{{url_for('test.payments')}}">Payment tests</a></li>
+              <li><a class="dropdown-item" href="{{url_for('test.authenticate')}}">Authentication tests</a></li>
             </ul>
           </li>
         </ul>

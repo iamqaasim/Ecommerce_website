@@ -1,0 +1,93 @@
+<!-- 
+Variables coming into this template:
+
+count - the number of unique items in the store
+fetch - get data from database
+-->
+
+<!-- This page is inheriting everything from the base template -->
+{% extends "base.html" %}
+
+<!-- This block tag is overriding the title block tag from the base template -->
+{% block title %} Testing Authentication {% endblock %}
+
+
+<!-- This block tag is overriding the content block tag from the base template -->
+{% block content%}
+  <h1>This is the testing template.</h1>
+  <h3> Using the DBs 'items' collection </h3>
+
+  <h1> Sign Up </h1>
+
+  <form method="POST">
+    
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="inputGroup-sizing-default">Username</span>
+      <input name="username" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+  
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
+      <input name="name" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+  
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+      <input name="email" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+  
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="inputGroup-sizing-default">Password</span>
+      <input name="password" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+  
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="inputGroup-sizing-default">Confirm password</span>
+      <input name="confirm_password" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+    
+    <div class="mb-3 form-check">
+      <input name="check_box" type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">I filled in all the fields</label>
+    </div>
+    
+    <button type="submit" class="btn btn-secondary">Submit</button>
+  </form>
+  <h2>_____________________________________________________________</h2>
+
+  {% if method == "POST" %}
+    <h3>Register function</h3>
+    <p> User added?: ((registered_users))</p>
+      
+    <p>User details:</p>
+    <p>name: {{request_name}},</p>
+    <p>username: {{request_user}},</p>
+    <p> email: {{request_email}},</p>
+    <p>password: {{request_password}}</p>
+  
+    <h3>Valid login function</h3>
+    
+    <p>Return:</p>
+    <p>0 if user not in database</p>
+    <p>1 if user is in database but incorrect password</p>
+    <p>2 if correct user an correct password</p>
+
+    <p>your validation int: ((valid_login))</p>
+ 
+  
+    <h3>Hashed password function</h3>
+    <p> the hashed pass word is: ((hash_passwords))</p>
+  
+    <h3>Delete function</h3>
+    <p> ((deleted_user)) was deleted </p>
+  
+    <h3>Product ID function</h3>
+    <p></p>
+  
+    <h3>Product list function</h3>
+    <p></p>
+  
+    <h3>Search function</h3>
+    <p></p>
+  {% endif %}
+{% endblock %}

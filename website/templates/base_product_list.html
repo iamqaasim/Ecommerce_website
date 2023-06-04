@@ -13,7 +13,7 @@
       crossorigin="anonymous">
 
     <!-- Child templates can change this 'block' tagged as 'title' -->
-    <title>{% block title %} Base {% endblock %}</title>
+    <title>{% block title %} {{ product_title }} {% endblock %}</title>
 
   </head>
   <body>
@@ -41,7 +41,28 @@
     <div>{% block banner %} {% endblock %}</div>
     
     
-    <div  class="container">{% block content %} {% endblock %}</div>
+    <div  class="container">
+      {% block content %} 
+
+      <!--
+      
+      variables:
+        items: the list of items  passed into the template 
+      
+      templates:
+        card: template used top display each item in the list
+      
+      loop through items and display each item using the card template 
+      
+      -->
+      
+      <!--
+      {{ items }}
+      {% include 'card.html' %}
+      -->
+      
+      {% endblock %}
+    </div>
 
 
 

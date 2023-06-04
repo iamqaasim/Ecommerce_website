@@ -9,30 +9,39 @@ fetch - get data from database
 {% extends "base.html" %}
 
 <!-- This block tag is overriding the title block tag from the base template -->
-{% block title %} Testing {% endblock %}
+{% block title %} Testing Stripe {% endblock %}
 
 
 <!-- This block tag is overriding the content block tag from the base template -->
 {% block content%}
   <h1>This is the testing template.</h1>
+  <h3> Using Stripe API </h3>
+  <h2>_____________________________________________________________</h2>
 
+  <h3>Count function</h3>
   <p>Database total colllection count is {{count_items}}.</p>
-  
+
+  <h3>Add function</h3>
   <p>Your Document was added to the database with ID:{{add_item}}.</p>
 
+  <h3>Update function</h3>
   <p>Product {{update_item}} was updated.</p>
 
+  <h3>Delete function</h3>
   <p>Product {{removed_item}} was removed.</p>
 
+  <h3>Product ID function</h3>
   <p>Product ID is {{get_id}}</p>
-  
-  <p>Here is a list of all your products.
+
+  <h3>Product list function</h3>
+  <p>
     {%for item in all_items %}
       <div>{{item['item_name']}}</div>
     {% endfor %}
   </p>
 
-  <p>Here is a list of all your products you tried to search.
+  <h3>Search function</h3>
+  <p>
     {% if searched_products == []: %}
       <div>Product not found</div>
     {% else %}

@@ -1,79 +1,16 @@
 '''
-This will include all the routes used for the site
+This will include all the testing routes used for the site
 '''
 # Blueprint is used to sort our routes
 # Render_template is used to render the html pages
-from flask import Blueprint, render_template, jsonify
-# Import database handler functions
-from .database import *
+from flask import Blueprint, render_template, request, session, redirect, url_for, flash
+# Import database related functions
+from .db_main import *
+from .db_stripe import *
 # Import connection variables
-from .extensions import *
+from .connections import *
 
-views = Blueprint('views',__name__)
-
-
-# Create routes
-@views.route('/')
-def home():
-  '''
-  Create a route for the Home page 
-  '''
-  return render_template("home.html")
-
-
-'''
-ROUTES TO BE ADDED:
-
-VIEWS:
-route for men clothing
-  -sub routes for: shirts, sweaters, pants, jerseys, jackets, shoes
-
-route for women clothing
-  -sub routes for: skirts, shirts, sweaters, pants, jerseys, jackets, shoes
-
-route for accessories
-  -sub route for men
-    -sub sub routes: watches, jewelry, bags
-  -sub route for women
-    -sub sub routes: watches, jewelry, bags
-'''
-
-@views.route('/men_clothing')
-def men_clothing():
-  '''
-  Create a route for the men_clothing page 
-  '''
-  return render_template("men_clothing.html")
-
-@views.route('/women_clothing')
-def women_clothing():
-  '''
-  Create a route for the women_clothing page 
-  '''
-  return render_template("women_clothing.html")
-
-@views.route('/accessories')
-def accessories():
-  '''
-  Create a route for the accessories page 
-  '''
-  return render_template("accessories.html")
-
-@views.route('/contact_us')
-def contact_us():
-  '''
-  Create a route for the contact_us page 
-  '''
-  return render_template("contact_us.html")
-
-@views.route('/about_us')
-def about_us():
-  '''
-  Create a route for the about_us page 
-  '''
-  return render_template("about_us.html")
-
-# testing route --------------------------------------------------------------------------------
+test = Blueprint('test',__name__)
 
 # testing docs
 item_doc = {
@@ -110,12 +47,20 @@ product = {
   "size": "small, medium or large"
 }
 
-
-@views.route('/testing')
-def testing():
+@test.route('/database')
+def database():
   '''
   Create a route for testing
   '''
+  item_doc = {
+    "item": "item",
+    "item_name": "item name",
+    "item_category": "item category"
+  }
+  new_item_doc = {
+    "item": "updated item",
+    "item_name": "new name",
+  }
   # add a item
   add_items = add_item(collection_1, item_doc)
 
@@ -143,7 +88,7 @@ def testing():
   # count the items in the products collection
   count_items = total_item_count(collection_1)
   
-  return render_template("testing_template.html", 
+  return render_template("testing_db.html", 
                          count_items = count_items, 
                          add_item = add_items, 
                          all_items = all_items, 
@@ -151,3 +96,49 @@ def testing():
                          update_item = update_item, 
                          removed_item = removed_item, 
                          get_id = get_id)
+
+
+@test.route('/authenticate', methods=['POST', 'GET'])
+def authenticate():
+  '''
+  Create a route for testing
+  '''
+  if request.method == 'POST':
+    # request form data
+    request_name = request.form['name']
+    request_user = request.form['username']
+    request_email = request.form['email']
+    request_password = request.form['password']
+  
+    hash_passwords = hash_password(request_password)
+    print(hash_passwords)
+    
+    registered_users = register_user(request_name, request_user, request_email, request_password)
+    print(registered_users)
+    
+    valid_login = validate_login(request_user, request_password) 
+    print(valid_login)
+    
+    deleted_user = remove_user("user")
+    print(deleted_user)
+    
+    return render_template("testing_auth.html", 
+                           method = 'POST',
+                           hash_passwords = hash_passwords, 
+                           registered_users = registered_users, 
+                           valid_login = valid_login, 
+                           request_name = request_name, 
+                           request_user = request_user, 
+                           request_email = request_email, 
+                           request_password = request_password,
+                           deleted_user = deleted_user)
+  
+  return render_template("testing_auth.html", method='GET')
+
+@test.route('/payments')
+def payments():
+  '''
+  Create a route for testing
+  '''
+  add_stripe_product('product_name')
+  return 'test payment'

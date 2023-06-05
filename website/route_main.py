@@ -9,7 +9,7 @@ from flask_login import login_user, logout_user, login_required , current_user
 from .db_main import *
 # Import connection variables
 from .connections import *
-from forms import NewProduct, ContactUs
+
 
 views = Blueprint('views',__name__)
 
@@ -99,8 +99,7 @@ def contact_us():
   Return:
     contact page
   '''
-  form = ContactUs()
-  return render_template("contact_us.html", form=form)
+  return render_template("contact_us.html")
 
 
 @views.route('/about_us')
@@ -112,16 +111,3 @@ def about_us():
     about us page
   '''
   return render_template("about_us.html")
-
-
-@views.route('/new_product')
-def new_product():
-  '''
-  Create a route for adding a new product to the db
-
-  Return:
-    new_product page
-  '''
-  form = NewProduct()
-  return render_template("new_product.html", form=form)
-

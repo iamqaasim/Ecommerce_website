@@ -13,16 +13,6 @@ from .db_stripe import *
 pay = Blueprint('pay',__name__)
 
 
-'''
-ROUTES TO BE ADDED:
-
-PAYMENT:
-route for payment(cart)
-successful payment
-cancel payment
-'''
-
-
 # Create routes
 @pay.route('/checkout')
 def checkout():
@@ -32,6 +22,7 @@ def checkout():
   line_items (list): This the cart with all the items you want to purchase 
     price: this is the product ID (Stripe product ID, NOT DB product ID)
   '''
+  
   try:
     checkout_sesion = stripe.checkout.Session.create(
       line_items = [
@@ -63,6 +54,7 @@ def success():
   Return:
     sucessful payment message
   '''
+  
   flash('Payment successful!!!', category='success')
   return render_template("successful_payment.html")
 
@@ -74,5 +66,6 @@ def cancel():
   Return:
     Rediect to home page with a flashed cancel message
   '''
+  
   flash('Payment canceled', category='error')
   return redirect(url_for('views.home'))

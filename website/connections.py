@@ -7,9 +7,6 @@ Used to include all connection setup for the app
 '''General imports'''
 # access environment variables
 import os
-from dotenv import load_dotenv
-
-load_dotenv()
 
 '''MongoDB imports'''
 # Connect MongoDB (quick start modules)

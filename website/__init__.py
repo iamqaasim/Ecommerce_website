@@ -13,7 +13,6 @@ from .route_pay import pay
 from .route_test import test
 # Import connection variables
 from .connections import *
-from flask_bootstrap import Bootstrap
 
 
 
@@ -23,8 +22,6 @@ def create_app():
   app = Flask(__name__)
   app.config['SECRET_KEY'] = os.environ['SECRET_KEY']
 
-  Bootstrap(app)
-  
   # Register the route to access our views ad auth pages
   app.register_blueprint(views, url_prefix='/')
   app.register_blueprint(auth, url_prefix='/')

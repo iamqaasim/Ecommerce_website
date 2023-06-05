@@ -3,14 +3,16 @@ This will include all the authentication routes used for the site
 '''
 # Blueprint is used to sort our routes
 # Render_template is used to render the html pages
-from flask import Blueprint, render_template, jsonify
+from flask import Blueprint, render_template, jsonify, request
 from flask_login import login_user, logout_user, login_required , current_user
 # Import database handler functions
 from .db_main import *
 # Import connection variables
 from .connections import *
+from forms import NewProduct, ContactUs
 
 views = Blueprint('views',__name__)
+
 
 '''
 ROUTES TO BE ADDED:
@@ -97,7 +99,8 @@ def contact_us():
   Return:
     contact page
   '''
-  return render_template("contact_us.html")
+  form = ContactUs()
+  return render_template("contact_us.html", form=form)
 
 
 @views.route('/about_us')
@@ -109,4 +112,16 @@ def about_us():
     about us page
   '''
   return render_template("about_us.html")
+
+
+@views.route('/new_product')
+def new_product():
+  '''
+  Create a route for adding a new product to the db
+
+  Return:
+    new_product page
+  '''
+  form = NewProduct()
+  return render_template("new_product.html", form=form)
 

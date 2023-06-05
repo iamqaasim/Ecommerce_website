@@ -5,6 +5,7 @@ variable -
 
 -->
 
+
 <!-- This page is inheriting everything from the base template -->
 {% extends "base.html" %}
 
@@ -14,26 +15,31 @@ variable -
 
 <!-- This block tag is overriding the content block tag from the base template -->
 {% block content%}
-<h1>This is the Contact page</h1>
 
-<h2>This form should have 4 fields</h2>
+<div class="container text-center">
+  <h1>Contact Us</h1>
 
-<div>
-  
-  <ul>
-    <li><p>email</p></li>
-    <li><p>email subject title</p></li>
-    <li><p>user name</p></li>
-    <li><p>message</p></li>
-  </ul>
-  
-  <p>
-    Add a submittion button, when clicked it should take them to the Home page
-  </p>
-  
-  <p>
-    (eg similar to the demo site)
-  </p>
-  
+  <form action="" method="POST" enctype="multipart/form-data">
+    <div class="container text-center">
+        <label for="Name">Name: </label>
+        <br>
+        <input type="text" name="name" placeholder="Name">
+        <br>
+        <label for="Price">Email: </label>
+        <br>
+        <input type="email" name="email" placeholder="Email">
+        <br>
+        <label for="Description">Subject: </label>
+        <br>
+        <input type="text" name="Subject" placeholder="Subject">
+        <br>
+        <label for="Category">Message: </label>
+        <br>
+        <textarea name="message" id="" cols="30" rows="10" placeholder="Type your message here"></textarea>
+        <br>
+        <button type="submit" class="btn btn-primary">Send</button>
+    </div>
+</form>
 </div>
+
 {% endblock %}

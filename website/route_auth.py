@@ -3,9 +3,12 @@ This will include all the main routes used for the site
 '''
 # Blueprint is used to sort our routes
 # Render_template is used to render the html pages
+# Request is used to get POST data
+# Session is used to handle session database_name
+# Redirect is used to redirect pages
+# Url_for is used to get teh url for a route
+# Flash is used to flash success or error messages
 from flask import Blueprint, render_template, request, session, redirect, url_for, flash
-# Log manager
-from flask_login import login_user, logout_user, login_required , current_user
 # import main CRUD functions
 from.db_main import *
 # authentication functions

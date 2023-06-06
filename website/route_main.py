@@ -3,13 +3,12 @@ This will include all the authentication routes used for the site
 '''
 # Blueprint is used to sort our routes
 # Render_template is used to render the html pages
-from flask import Blueprint, render_template, jsonify, request
-from flask_login import login_user, logout_user, login_required , current_user
+# Request is used to get POST data
+from flask import Blueprint, render_template, request, flash
 # Import database handler functions
 from .db_main import *
 # Import connection variables
 from .connections import *
-
 
 views = Blueprint('views',__name__)
 
@@ -88,17 +87,51 @@ def accessories():
   return render_template("accessories.html")
 
 
-@views.route('/contact_us')
+@views.route('/contact_us', methods=['POST', 'GET'])
 def contact_us():
   '''
   Create a route for the contact_us page
 
   POST method:
-    send a email directly to bsuiness email acount
+    send a email directly to business email acount
   
   Return:
     contact page
   '''
+
+  if request.method == 'POST':
+    # request form data
+    request_name = request.form['name']
+    request_email = request.form['email']
+    request_subject = request.form['subject']
+    request_message = request.form['message']
+    
+    # set email fields
+    email_reciever = request_email
+    email_subject = f"{request_subject} - {request_name}"
+    email_message = request_message
+    
+    # configure email feilds
+    try:
+      em['From'] = email_sender
+      em['To'] = email_reciever
+      em['Subject'] = email_subject
+      em.set_content(f"{email_message}")
+    except Exception:
+      flash('Please fill all fields before submitting!', category='error')
+      return render_template("contact_us.html")
+      
+    # send secure email
+    try:
+      with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
+        smtp.login(email_sender, email_password)
+        smtp.sendmail(email_sender, email_reciever, em.as_string())
+        flash('Email sent!', category='success')
+    except Exception:
+      flash('There was an error!', category='error')
+      flash('Please insert valid Email address!', category='error')
+      return render_template("contact_us.html")
+      
   return render_template("contact_us.html")
 
 

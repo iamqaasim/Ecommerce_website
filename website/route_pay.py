@@ -3,6 +3,11 @@ This will include all the payment routes used for the site
 '''
 # Blueprint is used to sort our routes
 # Render_template is used to render the html pages
+# Request is used to get POST data
+# Session is used to handle session database_name
+# Redirect is used to redirect pages
+# Url_for is used to get teh url for a route
+# Flash is used to flash success or error messages
 from flask import Blueprint, render_template, request, session, redirect, url_for, flash
 # Allow payments
 import stripe

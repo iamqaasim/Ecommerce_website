@@ -19,6 +19,11 @@ from bson.objectid import ObjectId
 # Allow CRUD operations and payments method
 import stripe
 
+'''Email imports'''
+from email.message import EmailMessage
+import ssl
+import smtplib
+
 # DATABASE CONNECTIONS --------------------------------------------------------------------------
 # Create a new client and connect to the server
 uri = os.environ['MONGO_URI'] # store connection string into environment varibale MONGO_URI
@@ -57,3 +62,12 @@ def testing_db_conenction():
 # Connect stripe API 
 stripe.api_key = os.environ['STRIPE_SCT']
 
+# EMAIL CONNECTION -------------------------------------------------------------------------------
+
+# Connect to email address
+email_sender = os.environ['EMAIL_SENDER']
+email_password = os.environ['EMAIL_PASSWORD']
+
+# variable to configure email
+em = EmailMessage()
+context = ssl.create_default_context()

@@ -7,6 +7,13 @@ from .connections import *
 from.db_main import *
 # hashing user password
 import bcrypt
+# valid email
+from validate_email import validate_email
+# manage session data 
+from flask import session
+# timer
+from datetime import timedelta
+
 
 # Log manager
 from flask_login import login_user, logout_user, login_required , current_user
@@ -25,6 +32,26 @@ def hash_password(password: str) -> bytes:
   '''
   passwd = password.encode('utf-8')
   return bcrypt.hashpw(passwd, bcrypt.gensalt())
+
+def email_validation(email: str) -> bool:
+  '''
+  Check if email address is valid
+
+  Args:
+    email (str): user email
+  
+  Return:
+    True - if valid email
+    False - otherwise
+  '''
+  try:
+    valid_email = validate_email(email, verify=True)
+    if valid_email:
+      return True
+    else: 
+      return False
+  except Exception as e:
+    return e
 
 
 # NEW USER ---------------------------------------------------------------------------
@@ -62,6 +89,8 @@ def register_user(name: str, username: str, email: str, password: str) -> bool:
 
 def validate_login(username: str, password: str):
   '''
+  Used for verification in login and signup process
+  
   Validate 
     if user exist, 
     if user password is correct
@@ -93,6 +122,7 @@ def validate_login(username: str, password: str):
 
 
 # UPDATE USER -------------------------------------------------------------------------
+
 def update_user(username: str, doc: dict) -> bool:
   '''
   update user details

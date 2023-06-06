@@ -1,5 +1,7 @@
 '''
 CRUD functions related to stripe API
+
+Stripe API was used to fetch the item data
 '''
 # import db connection variables
 from .connections import *
@@ -35,7 +37,8 @@ def add_stripe_product(product_key: str) -> int:
           "price": price_data['unit_amount']
         },
         "product_description": product_data['description'],
-        "category": product_data['unit_label']
+        "category": product_data['unit_label'],
+        "image": product_data['images']
       }
       
       # check if item exist in MongoDB
@@ -112,7 +115,8 @@ def update_stripe_product(product_key: str) -> int:
           "price": price_data['unit_amount']
         },
         "product_description": product_data['description'],
-        "category": product_data['unit_label']
+        "category": product_data['unit_label'],
+        "image": product_data['images']
       }
 
       updates = {

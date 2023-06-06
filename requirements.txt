@@ -4,3 +4,5 @@ stripe
 Mongo
 bcrypt
 flask-login
+validate_email
+py3dns

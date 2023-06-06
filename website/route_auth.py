@@ -41,29 +41,61 @@ def signup():
       redirects to home page
   '''
   
+  if "user" in session:
+      flash("You're already logged in", category='success')
+
   if request.method == 'POST':
     # request form data
     request_name = request.form['name']
     request_user = request.form['username']
     request_email = request.form['email']
     request_password = request.form['password']
+    request_confirmed_password = request.form['confirm_password']
 
-    valid = validate_login(request_user, request_password)
-
-    if valid == 0:
-      register_user(request_name, request_user, request_email, request_password)
-      flash('signed up', category='success')
-      return redirect(url_for('views.home'))
-    elif valid == 1:
-      flash('user exist, password invalid', category='error')
-    elif valid == 2:
-      flash('logged in', category='success')
-      return redirect(url_for('views.home'))
+    # check if user exist
+    valid_user = validate_login(request_user, request_password)
+    
+    # check valid email
+    valid_email = email_validation(request_email)
+    
+    # check password and confirmed password
+    if request_password == request_confirmed_password:
+      valid_password = True
     else:
-      return valid
-    # register_user(request_name, request_user, request_email, request_password)
-
+      valid_password = False
+    
+    if valid_email: # valid email layer
+      if valid_password: # valid password match layer
+        if valid_user == 0:
+          
+          # set session timer
+          session.permanent = True
+          #set session variable
+          session["user"] = request_user
+          
+          # register new user in MongoDB
+          register_user(request_name, request_user, request_email, request_password)
+          flash('Successful Sign Up!', category='success')
+          return redirect(url_for('views.home'))
+        elif valid_user == 1:
+          flash('Username Already Exist', category='error')
+        elif valid_user == 2:
+          
+          # set session timer
+          session.permanent = True
+          #set session variable
+          session["user"] = request_user
+          
+          flash('Welcome Back! You are now logged in', category='success')
+          return redirect(url_for('views.home'))
+        else:
+          return valid_user
+      else:
+        flash('Please make sure passwords match!', category='error')
+    else:
+      flash('Please enter valid email address', category='error')
   return render_template("signup.html")
+  
 
 
 @auth.route('/login', methods=['POST', 'GET'])
@@ -87,22 +119,32 @@ def login():
       redirects to home page
   '''
   
+  if "user" in session:
+    flash("You're already logged in", category='success')
+  
   if request.method == 'POST':
     # request form data
     request_user = request.form['username']
     request_password = request.form['password']
     
-    valid = validate_login(request_user, request_password)
+    # check if user exist
+    valid_user = validate_login(request_user, request_password)
 
-    if valid == 0:
-      flash('username doesnt exist', category='error')
-    elif valid == 1:
-      flash('invalid password', category='error')
-    elif valid == 2:
-      flash('logged in', category='success')
+    if valid_user == 0:
+      flash('Invalid Username!', category='error')
+    elif valid_user == 1:
+      flash('Invalid Password!', category='error')
+    elif valid_user == 2:
+      
+      # set session timer
+      session.permanent = True
+      #set session variable
+      session["user"] = request_user
+      
+      flash('Welcome Back! You are now logged in', category='success')
       return redirect(url_for('views.home'))
     else:
-      return valid
+      return valid_user
   return render_template("login.html")
 
 @auth.route('/logout')
@@ -114,6 +156,13 @@ def logout():
     flash logout message
     redirect to login page
   '''
-  
-  flash('logged out', category='error')
-  return redirect(url_for('auth.login'))
+  if "user" in session:
+    flash(f'Logged out {session["user"]}.', category='error')
+
+    #remove session data
+    session.pop("user", None)
+    
+    return redirect(url_for('views.login'))
+  else:
+    flash("You're not logged in", category='error')
+    return redirect(url_for('auth.login'))

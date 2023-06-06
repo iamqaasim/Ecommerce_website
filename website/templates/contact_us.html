@@ -15,29 +15,29 @@ variable -
 
 <!-- This block tag is overriding the content block tag from the base template -->
 {% block content%}
-  <h1>Contact Us</h1>
+<h1> Contact Us </h1>
 
-  <form action="" method="POST" enctype="multipart/form-data">
-    <div class="container text-center">
-        <label for="Name">Name: </label>
-        <br>
-        <input type="text" name="name" placeholder="Name">
-        <br>
-        <label for="Price">Email: </label>
-        <br>
-        <input type="email" name="email" placeholder="Email">
-        <br>
-        <label for="Description">Subject: </label>
-        <br>
-        <input type="text" name="Subject" placeholder="Subject">
-        <br>
-        <label for="Category">Message: </label>
-        <br>
-        <textarea name="message" id="" cols="30" rows="10" placeholder="Type your message here"></textarea>
-        <br>
-        <button type="submit" class="btn btn-primary">Send</button>
-    </div>
+<form method="POST">
+
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
+    <input name="name" placeholder="insert your name" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+    <input name="email" placeholder="insert email" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default">Subject</span>
+    <input name="subject" placeholder="insert Email subject" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+  </div>
+  
+  <div class="input-group mb-3">
+  <textarea class="form-control" name="message" placeholder="insert Email message" aria-label="With textarea"></textarea>
+  </div>
+  
+  <button type="submit" class="btn btn-secondary">Submit</button>
 </form>
-
-
 {% endblock %}

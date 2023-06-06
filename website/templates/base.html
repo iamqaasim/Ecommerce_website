@@ -18,7 +18,9 @@
   </head>
   <body>
     {% include 'nav.html' %}
-
+    <!-- add space for the nav bar so that it doesnt overlap the content of the pages -->
+    <div style="height: 56px"></div>
+    
     <!-- impliment flashed messages -->
     {% with messages = get_flashed_messages(with_categories=True) %}
       {% if messages %}

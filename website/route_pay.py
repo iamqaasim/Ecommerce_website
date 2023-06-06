@@ -55,6 +55,12 @@ def success():
     sucessful payment message
   '''
   
+  #product_key = 'prod_O1S8Kpa8aQH6Es'
+  #print(add_stripe_product(product_key))
+  #print(find_stripe_product(product_key))
+  #print(update_stripe_product(product_key))
+  #print(remove_stripe_product(product_key))
+  
   flash('Payment successful!!!', category='success')
   return render_template("successful_payment.html")
 

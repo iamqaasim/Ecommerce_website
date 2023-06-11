@@ -14,13 +14,5 @@ variable -
 
 <!-- This block tag is overriding the content block tag from the base template -->
 {% block content%}
-  <h1>This is the Successful payment page</h1>
-
-<h2>This page should have 1 section</h2>
-
-<div>
-  <p>
-    Simple UI that show successfull payment
-  </p>
-</div>
+  {% include 'jumbotron.html' %}
 {% endblock %}

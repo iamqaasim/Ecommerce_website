@@ -1,45 +1,89 @@
 <div class="container">
   <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
-    <div class="col mb-3">
+    
+    <div class="col-12 col-md-4 col-lg-4">
+      <p class="text-body-secondary">© Ecommerce Store 2023</p>
+      <p class="text-body-secondary">Frontend design with HTML and Bootstrap. Backend built with Python and Flask. Database in use MongoDB. We also use Stripe third party API.</p>
+      <p class="text-body-secondary">code licensed MIT</p>
+      <p class="text-body-secondary">currently: v1.5.3</p>
       <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
         <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
       </a>
-      <p class="text-body-secondary">© SUUK 2023</p>
     </div>
 
-    <div class="col mb-3">
-
-    </div>
-
-    <div class="col mb-3">
-      <h5>MEN</h5>
+    <div class="col-12 col-md-4 col-lg-2">
+      <h5>Features</h5>
+      <hr>
       <ul class="nav flex-column">
-        <li class="nav-item mb-2"><a href="{{url_for('views.men_clothing')}}" class="nav-link p-0 text-body-secondary">Shirts</a></li>
-        <li class="nav-item mb-2"><a href="{{url_for('views.men_clothing')}}" class="nav-link p-0 text-body-secondary">Sweaters</a></li>
-        <li class="nav-item mb-2"><a href="{{url_for('views.men_clothing')}}" class="nav-link p-0 text-body-secondary">Jerseys</a></li>
-        <li class="nav-item mb-2"><a href="{{url_for('views.men_clothing')}}" class="nav-link p-0 text-body-secondary">Jackets</a></li>
-        <li class="nav-item mb-2"><a href="{{url_for('views.men_clothing')}}" class="nav-link p-0 text-body-secondary">Pants</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Secure Authentication</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Dynamic Data Storage</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Products Search</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Stripe Payment</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Shopping Cart</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Seller Section</a></li>
       </ul>
+      <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+      </a>
     </div>
 
-    <div class="col mb-3">
-      <h5>WOMEN</h5>
-      <ul class="nav flex-column">
-        <li class="nav-item mb-2"><a href="{{url_for('views.women_clothing')}}" class="nav-link p-0 text-body-secondary">Shirts</a></li>
-        <li class="nav-item mb-2"><a href="{{url_for('views.women_clothing')}}" class="nav-link p-0 text-body-secondary">Sweaters</a></li>
-        <li class="nav-item mb-2"><a href="{{url_for('views.women_clothing')}}" class="nav-link p-0 text-body-secondary">Jerseys</a></li>
-        <li class="nav-item mb-2"><a href="{{url_for('views.women_clothing')}}" class="nav-link p-0 text-body-secondary">Jackets</a></li>
-        <li class="nav-item mb-2"><a href="{{url_for('views.women_clothing')}}" class="nav-link p-0 text-body-secondary">Skirts</a></li>
-        <li class="nav-item mb-2"><a href="{{url_for('views.women_clothing')}}" class="nav-link p-0 text-body-secondary">Pants</a></li>
+    <div class="col-12 col-md-4 col-lg-2">
+      <div class="text-center">
+        <h5>MEN</h5>
+      </div>
+      
+      <hr>
+      
+      <ul class="nav flex-column text-center">
+        <li class="nav-item mb-2"><a href="{{url_for('male_items.men_shirts')}}" class="nav-link p-0 text-body-secondary">Shirts</a></li>
+        <li class="nav-item mb-2"><a href="{{url_for('male_items.men_sweaters')}}" class="nav-link p-0 text-body-secondary">Sweaters</a></li>
+        <li class="nav-item mb-2"><a href="{{url_for('male_items.men_jerseys')}}" class="nav-link p-0 text-body-secondary">Jerseys</a></li>
+        <li class="nav-item mb-2"><a href="{{url_for('male_items.men_jackets')}}" class="nav-link p-0 text-body-secondary">Jackets</a></li>
+        <li class="nav-item mb-2"><a href="{{url_for('male_items.men_pants')}}" class="nav-link p-0 text-body-secondary">Pants</a></li>
       </ul>
+      <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+      </a>
     </div>
 
-    <div class="col mb-3">
-      <h5>ACCESSORIES</h5>
-      <ul class="nav flex-column">
-        <li class="nav-item mb-2"><a href="{{url_for('views.accessories')}}" class="nav-link p-0 text-body-secondary">Watches</a></li>
-        <li class="nav-item mb-2"><a href="{{url_for('views.accessories')}}" class="nav-link p-0 text-body-secondary">Bags</a></li>
+    <div class="col-12 col-md-4 col-lg-2">
+      <div class="text-center">
+        <h5>WOMEN</h5>
+      </div>
+      
+      <hr>
+      
+      <ul class="nav flex-column text-center">
+        <li class="nav-item mb-2"><a href="{{url_for('female_items.women_shirts')}}" class="nav-link p-0 text-body-secondary">Shirts</a></li>
+        <li class="nav-item mb-2"><a href="{{url_for('female_items.women_sweaters')}}" class="nav-link p-0 text-body-secondary">Sweaters</a></li>
+        <li class="nav-item mb-2"><a href="{{url_for('female_items.women_jerseys')}}" class="nav-link p-0 text-body-secondary">Jerseys</a></li>
+        <li class="nav-item mb-2"><a href="{{url_for('female_items.women_jackets')}}" class="nav-link p-0 text-body-secondary">Jackets</a></li>
+        <li class="nav-item mb-2"><a href="{{url_for('female_items.women_skirts')}}" class="nav-link p-0 text-body-secondary">Skirts</a></li>
+        <li class="nav-item mb-2"><a href="{{url_for('female_items.women_pants')}}" class="nav-link p-0 text-body-secondary">Pants</a></li>
       </ul>
+      <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+      </a>
+    </div>
+
+    <div class="col-12 col-md-4 col-lg-2">
+      <div class="text-center">
+        <h5>ACCESSORIES</h5>
+      </div>
+      
+      <hr>
+      
+      <ul class="nav flex-column text-center">
+        <li class="nav-item mb-2"><a href="{{url_for('female_items.women_bags')}}" class="nav-link p-0 text-body-secondary">Bags (F)</a></li>
+        <li class="nav-item mb-2"><a href="{{url_for('male_items.men_bags')}}" class="nav-link p-0 text-body-secondary">Bags (M)</a></li>
+        <li class="nav-item mb-2"><a href="{{url_for('female_items.women_watches')}}" class="nav-link p-0 text-body-secondary">Watches (F)</a></li>
+        <li class="nav-item mb-2"><a href="{{url_for('male_items.men_watches')}}" class="nav-link p-0 text-body-secondary">Watches (M)</a></li>
+        <li class="nav-item mb-2"><a href="{{url_for('female_items.women_jewlry')}}" class="nav-link p-0 text-body-secondary">Jewlry</a></li>
+        
+      </ul>
+      <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+      </a>
     </div>
   </footer>
 </div>

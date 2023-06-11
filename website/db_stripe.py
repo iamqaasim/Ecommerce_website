@@ -5,13 +5,21 @@ Stripe API was used to fetch the item data
 '''
 # import db connection variables
 from .connections import *
+# Import database handler functions
 from .db_main import *
+
+
 
 # ADD PRODUCT -------------------------------------------------------------------------
 
-def add_stripe_product(product_key: str) -> int:
+def add_stripe_product(product_key: str, category: str, sub_category: str) -> int:
   '''
   add stripe product to MongoDB
+
+  Args:
+    product_key: Stripe product key
+    category: male or female categories (clothing or accessory)
+    sub_category: clothing or accessory sub catetories (sweater, shirt, pants, etc..)
 
   Return:
     0 if item already found in MongoDB
@@ -26,7 +34,11 @@ def add_stripe_product(product_key: str) -> int:
     if product_data != None:
       # fetch stripe price data
       price_data = stripe.Price.retrieve(product_data['default_price'])
-    
+      if product_data['images'] == []:
+        image = ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_38GaBgnp-f3c5IXYIUXFacnep2C53O71N9kWeQq5ZlkVDXq5hSbUefj8ZM_hSslCl8k&usqp=CAU']
+      else: 
+        image = product_data['images']
+
       # document for MongoDB
       doc = {
         "stripe_product_id": product_data['id'],
@@ -37,8 +49,8 @@ def add_stripe_product(product_key: str) -> int:
           "price": price_data['unit_amount']
         },
         "product_description": product_data['description'],
-        "category": product_data['unit_label'],
-        "image": product_data['images']
+        "image": image,
+        "category": [category, sub_category]
       }
       
       # check if item exist in MongoDB
@@ -62,6 +74,9 @@ def find_stripe_product(product_key: str) -> int:
   '''
   find stripe product in MongoDB
 
+  Args:
+    product_key: Stripe product key
+    
   Return:
     0 if item in MongoDB
     1 if item not found in MongoDB
@@ -87,9 +102,14 @@ def find_stripe_product(product_key: str) -> int:
 
 # UPDATE PRODUCT -----------------------------------------------------------------------
 
-def update_stripe_product(product_key: str) -> int:
+def update_stripe_product(product_key: str, category: str, sub_category: str) -> int:
   '''
   update stripe product in MongoDB
+
+  Args:
+    product_key: Stripe product key
+    category: male or female categories (clothing or accessory)
+    sub_category: clothing or accessory sub catetories (sweater, shirt, pants, etc..)
 
   Return:
     0 if item was updated
@@ -116,7 +136,8 @@ def update_stripe_product(product_key: str) -> int:
         },
         "product_description": product_data['description'],
         "category": product_data['unit_label'],
-        "image": product_data['images']
+        "image": product_data['images'],
+        "category": [category, sub_category]
       }
 
       updates = {

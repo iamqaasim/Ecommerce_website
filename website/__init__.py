@@ -11,6 +11,8 @@ from .route_main import views
 from .route_auth import auth
 from .route_pay import pay
 from .route_test import test
+from .route_male_items import male_items
+from .route_female_items import female_items
 
 # Import connection variables
 from .connections import *
@@ -30,5 +32,7 @@ def create_app():
   app.register_blueprint(auth, url_prefix='/')
   app.register_blueprint(pay, url_prefix='/')
   app.register_blueprint(test, url_prefix='/')
+  app.register_blueprint(male_items, url_prefix='/')
+  app.register_blueprint(female_items, url_prefix='/')
   
   return app

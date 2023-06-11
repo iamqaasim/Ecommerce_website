@@ -15,29 +15,34 @@ variable -
 
 <!-- This block tag is overriding the content block tag from the base template -->
 {% block content%}
-<h1> Contact Us </h1>
-
-<form method="POST">
-
-  <div class="input-group mb-3">
-    <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
-    <input name="name" placeholder="insert your Name" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+<div class="p-5 m-4 bg-body-secondary rounded-3">
+  <div class="container-fluid text-center">
+    <h1> Contact Us </h1>
+    <p>Any inquiries ? Fill in the form to contact us directly..</p>
+    
+    <form method="POST">
+    
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
+        <input name="name" placeholder="insert your Name" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      </div>
+    
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+        <input name="email" placeholder="insert Email" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      </div>
+    
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Subject</span>
+        <input name="subject" placeholder="insert Email subject" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      </div>
+      
+      <div class="input-group mb-3">
+      <textarea class="form-control" name="message" placeholder="insert Email message" aria-label="With textarea"></textarea>
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Send</button>
+    </form>
   </div>
-
-  <div class="input-group mb-3">
-    <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
-    <input name="email" placeholder="insert Email" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-  </div>
-
-  <div class="input-group mb-3">
-    <span class="input-group-text" id="inputGroup-sizing-default">Subject</span>
-    <input name="subject" placeholder="insert Email subject" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-  </div>
-  
-  <div class="input-group mb-3">
-  <textarea class="form-control" name="message" placeholder="insert Email message" aria-label="With textarea"></textarea>
-  </div>
-  
-  <button type="submit" class="btn btn-secondary">Submit</button>
-</form>
+</div>
 {% endblock %}

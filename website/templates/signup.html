@@ -7,37 +7,47 @@
 
 <!-- This block tag is overriding the content block tag from the base template -->
 {% block content%}
-<h1> Sign Up </h1>
+{% block nav %} {% endblock %}
 
-<form method="POST">
-  
-  <div class="input-group mb-3">
-    <span class="input-group-text" id="inputGroup-sizing-default">Username</span>
-    <input name="username" placeholder="insert username" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+<div class="p-5 bg-body-secondary rounded-3">
+  <div class="container-fluid">
+    <h1> Sign Up </h1>
+    
+    <p>Create a free account with your email</p>
+    
+    <form method="POST">
+      
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Username</span>
+        <input name="username" placeholder="insert username" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      </div>
+    
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
+        <input name="name" placeholder="insert your name" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      </div>
+    
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+        <input name="email" placeholder="insert email" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      </div>
+    
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Password</span>
+        <input name="password" placeholder="insert password" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      </div>
+    
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Confirm password</span>
+        <input name="confirm_password" placeholder="confirm password" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      </div>
+      
+      <p>Already have an account ? <a href="{{url_for('auth.login')}}">Login</a></p>
+      
+      <button type="submit" class="btn btn-outline-primary">Submit</button>
+    </form>
   </div>
+</div>
 
-  <div class="input-group mb-3">
-    <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
-    <input name="name" placeholder="insert your name" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-  </div>
-
-  <div class="input-group mb-3">
-    <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
-    <input name="email" placeholder="insert email" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-  </div>
-
-  <div class="input-group mb-3">
-    <span class="input-group-text" id="inputGroup-sizing-default">Password</span>
-    <input name="password" placeholder="insert password" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-  </div>
-
-  <div class="input-group mb-3">
-    <span class="input-group-text" id="inputGroup-sizing-default">Confirm password</span>
-    <input name="confirm_password" placeholder="confirm password" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-  </div>
-  
-  <p>Already have an account? <a href="{{url_for('auth.login')}}">Login</a></p>
-  
-  <button type="submit" class="btn btn-secondary">Submit</button>
-</form>
+{% block footer %} {% endblock %}
 {% endblock %}

@@ -1,0 +1,265 @@
+<!-- 
+Variables coming into this template:
+
+Website data
+tab_title - Header of the tab
+
+product data
+heading - Heading of the products (max 10)
+products - List of products to be displayed (max 10)
+-->
+
+<!-- This page is inheriting everything from the base template -->
+{% extends "base.html" %}
+
+<!-- This block tag is overriding the title block tag from the base template -->
+{% block title %} {{tab_title}} {% endblock %}
+
+<!-- This block tag is overriding the banner block tag from the base template -->
+{% block banner %} {% endblock %}
+
+<!-- This block tag is overriding the content block tag from the base template -->
+{% block content%}
+
+  <h1>{{tab_title}}</h1>
+
+  {% if heading1: %}
+    <hr>
+    {% if section1:%}
+      <div class="d-flex justify-content-between">
+        <h1>- {{section1}}</h1>
+      </div>
+    {% endif %}
+    {% set products = {'products':products1} %}
+    <div class="d-flex justify-content-between">
+        <h2>{{heading1}}</h2>
+    </div>
+    {% include 'card_loop.html' %}
+  <br>
+  {% endif %}
+
+  {% if heading2: %}
+    <hr>
+    {% if section2:%}
+      <div class="d-flex justify-content-between">
+        <h1>- {{section2}}</h1>
+      </div>
+    {% endif %}
+    {% if products.update({'products':products2}) %} {% endif %}
+    <div class="d-flex justify-content-between">
+        <h2>{{heading2}}</h2>
+    </div>
+    {% include 'card_loop.html' %}
+  <br>
+  {% endif %}
+
+  {% if heading3: %}
+    <hr>
+    {% if section3:%}
+      <div class="d-flex justify-content-between">
+        <h1>- {{section3}}</h1>
+      </div>
+    {% endif %}
+    {% if products.update({'products':products3}) %} {% endif %}
+    <div class="d-flex justify-content-between">
+        <h2>{{heading3}}</h2>
+    </div>
+    {% include 'card_loop.html' %}
+  <br>
+  {% endif %}
+
+  {% if heading4: %}
+    <hr>
+    {% if section4:%}
+      <div class="d-flex justify-content-between">
+        <h1>- {{section4}}</h1>
+      </div>
+    {% endif %}
+    {% if products.update({'products':products4}) %} {% endif %}
+    <div class="d-flex justify-content-between">
+        <h2>{{heading4}}</h2>
+    </div>
+    {% include 'card_loop.html' %}
+  <br>
+  {% endif %}
+
+  {% if heading5: %}
+    <hr>
+    {% if section5:%}
+      <div class="d-flex justify-content-between">
+        <h1>- {{section5}}</h1>
+      </div>
+    {% endif %}
+    {% if products.update({'products':products5}) %} {% endif %}
+    <div class="d-flex justify-content-between">
+        <h2>{{heading5}}</h2>
+    </div>
+    {% include 'card_loop.html' %}
+  <br>
+  {% endif %}
+
+  {% if heading6: %}
+    <hr>
+    {% if section6:%}
+      <div class="d-flex justify-content-between">
+        <h1>- {{section6}}</h1>
+      </div>
+    {% endif %}
+    {% if products.update({'products':products6}) %} {% endif %}
+    <div class="d-flex justify-content-between">
+        <h2>{{heading6}}</h2>
+    </div>
+    {% include 'card_loop.html' %}
+  <br>
+  {% endif %}
+
+  {% if heading7: %}
+    <hr>
+    {% if section7:%}
+      <div class="d-flex justify-content-between">
+        <h1>- {{section7}}</h1>
+      </div>
+    {% endif %}
+    {% if products.update({'products':products7}) %} {% endif %}
+    <div class="d-flex justify-content-between">
+        <h2>{{heading7}}</h2>
+    </div>
+    {% include 'card_loop.html' %}
+  <br>
+  {% endif %}
+
+  {% if heading8: %}
+    <hr>
+    {% if section8:%}
+      <div class="d-flex justify-content-between">
+        <h1>- {{section8}}</h1>
+      </div>
+    {% endif %}
+    {% if products.update({'products':products8}) %} {% endif %}
+    <div class="d-flex justify-content-between">
+        <h2>{{heading8}}</h2>
+    </div>
+    {% include 'card_loop.html' %}
+  <br>
+  {% endif %}
+
+  {% if heading9: %}
+    <hr>
+    {% if section9:%}
+      <div class="d-flex justify-content-between">
+        <h1>- {{section9}}</h1>
+      </div>
+    {% endif %}
+    {% if products.update({'products':products9}) %} {% endif %}
+    <div class="d-flex justify-content-between">
+        <h2>{{heading9}}</h2>
+    </div>
+    {% include 'card_loop.html' %}
+  <br>
+  {% endif %}
+
+  {% if heading10: %}
+    <hr>
+    {% if section10:%}
+      <div class="d-flex justify-content-between">
+        <h1>- {{section10}}</h1>
+      </div>
+    {% endif %}
+    {% if products.update({'products':products10}) %} {% endif %}
+    <div class="d-flex justify-content-between">
+        <h2>{{heading10}}</h2>
+    </div>
+    {% include 'card_loop.html' %}
+  <br>
+  {% endif %}
+
+  {% if heading11: %}
+    <hr>
+    {% if section11:%}
+      <div class="d-flex justify-content-between">
+        <h1>- {{section11}}</h1>
+      </div>
+    {% endif %}
+    {% if products.update({'products':products11}) %} {% endif %}
+    <div class="d-flex justify-content-between">
+        <h2>{{heading11}}</h2>
+    </div>
+    {% include 'card_loop.html' %}
+  <br>
+  {% endif %}
+
+  {% if heading12: %}
+    <hr>
+    {% if section12:%}
+      <div class="d-flex justify-content-between">
+        <h1>- {{section12}}</h1>
+      </div>
+    {% endif %}
+    {% if products.update({'products':products12}) %} {% endif %}
+    <div class="d-flex justify-content-between">
+        <h2>{{heading12}}</h2>
+    </div>
+    {% include 'card_loop.html' %}
+  <br>
+  {% endif %}
+
+  {% if heading13: %}
+    <hr>
+    {% if section13:%}
+      <div class="d-flex justify-content-between">
+        <h1>- {{section13}}</h1>
+      </div>
+    {% endif %}
+    {% if products.update({'products':products13}) %} {% endif %}
+    <div class="d-flex justify-content-between">
+        <h2>{{heading13}}</h2>
+    </div>
+    {% include 'card_loop.html' %}
+  <br>
+  {% endif %}
+
+  {% if heading14: %}
+    <hr>
+    {% if section14:%}
+      <div class="d-flex justify-content-between">
+        <h1>- {{section14}}</h1>
+      </div>
+    {% endif %}
+    {% if products.update({'products':products14}) %} {% endif %}
+    <div class="d-flex justify-content-between">
+        <h2>{{heading14}}</h2>
+    </div>
+    {% include 'card_loop.html' %}
+  <br>
+  {% endif %}
+
+  {% if heading15: %}
+    <hr>
+    {% if section15:%}
+      <div class="d-flex justify-content-between">
+        <h1>- {{section15}}</h1>
+      </div>
+    {% endif %}
+    {% if products.update({'products':products15}) %} {% endif %}
+    <div class="d-flex justify-content-between">
+        <h2>{{heading15}}</h2>
+    </div>
+    {% include 'card_loop.html' %}
+  <br>
+  {% endif %}
+
+  {% if heading16: %}
+    <hr>
+    {% if section16:%}
+      <div class="d-flex justify-content-between">
+        <h1>- {{section16}}</h1>
+      </div>
+    {% endif %}
+    {% if products.update({'products':products16}) %} {% endif %}
+    <div class="d-flex justify-content-between">
+        <h2>{{heading16}}</h2>
+    </div>
+    {% include 'card_loop.html' %}
+  {% endif %}
+  
+{% endblock %}

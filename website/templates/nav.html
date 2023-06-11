@@ -1,62 +1,113 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" aria-label="Ninth navbar example">
-    <div class="container-xl">
-      <a class="navbar-brand" href="{{ url_for('views.home') }}">SUUK</a>
+<nav class="navbar navbar-expand-xl navbar-dark bg-dark fixed-top " aria-label="Ninth navbar example">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{{url_for('views.product_details')}}">Ecomm</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07XL" aria-controls="navbarsExample07XL" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarsExample07XL">
+      <div class="collapse navbar-collapse " id="navbarsExample07XL">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{{url_for('views.home')}}">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{url_for('views.men_clothing')}}">Men</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{url_for('views.women_clothing')}}">Women</a>
-          </li>
+          
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="{{url_for('views.accessories')}}" data-bs-toggle="dropdown" aria-expanded="false">Accessories</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{{url_for('views.accessories')}}">Bags</a></li>
-              <li><a class="dropdown-item" href="{{url_for('views.accessories')}}">Watches</a></li>
+            <a class="nav-link active dropdown-toggle bg-dark" href="#" data-bs-toggle="dropdown" aria-expanded="false">Men</a>
+            <ul class="dropdown-menu bg-dark">
+              <li><a class="dropdown-item text-light" href="{{url_for('male_items.men_clothing')}}">All items</a></li>
+              <li><hr class="dropdown-divider bg-light"></li>
+              <li><a class="dropdown-item text-light" href="{{url_for('male_items.men_shirts')}}">Shirts</a></li>
+              <li><a class="dropdown-item text-light" href="{{url_for('male_items.men_sweaters')}}">Sweaters</a></li>
+              <li><a class="dropdown-item text-light" href="{{url_for('male_items.men_jerseys')}}">Jerseys</a></li>
+              <li><a class="dropdown-item text-light" href="{{url_for('male_items.men_jackets')}}">Jackets</a></li>
+              <li><a class="dropdown-item text-light" href="{{url_for('male_items.men_pants')}}">Pants</a></li>
+              <li><hr class="dropdown-divider bg-light"></li>
+              <li><a class="dropdown-item text-light" href="{{url_for('male_items.men_bags')}}">Bags</a></li>
+              <li><a class="dropdown-item text-light" href="{{url_for('male_items.men_watches')}}">Watches</a></li>
             </ul>
           </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link active dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Women</a>
+            <ul class="dropdown-menu bg-dark">
+              <li><a class="dropdown-item text-light" href="{{url_for('female_items.women_clothing')}}">All items</a></li>
+              <li><hr class="dropdown-divider bg-light"></li>
+              <li><a class="dropdown-item text-light" href="{{url_for('female_items.women_shirts')}}">Shirts</a></li>
+              <li><a class="dropdown-item text-light" href="{{url_for('female_items.women_sweaters')}}">Sweaters</a></li>
+              <li><a class="dropdown-item text-light" href="{{url_for('female_items.women_jerseys')}}">Jerseys</a></li>
+              <li><a class="dropdown-item text-light" href="{{url_for('female_items.women_jackets')}}">Jackets</a></li>
+              <li><a class="dropdown-item text-light" href="{{url_for('female_items.women_pants')}}">Pants</a></li>
+              <li><a class="dropdown-item text-light" href="{{url_for('female_items.women_skirts')}}">Skirts</a></li>
+              <li><hr class="dropdown-divider  bg-light"></li>
+              <li><a class="dropdown-item text-light" href="{{url_for('female_items.women_bags')}}">Bags</a></li>
+              <li><a class="dropdown-item text-light" href="{{url_for('female_items.women_watches')}}">Watches</a></li>
+              <li><a class="dropdown-item text-light" href="{{url_for('female_items.women_jewlry')}}">Jewlry</a></li>
+            </ul>
+          </li>
+    
+          <li class="nav-item dropdown">
+            <a class="nav-link active dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Accessories</a>
+            <ul class="dropdown-menu bg-dark">
+              <li><a class="dropdown-item text-light" href="{{url_for('views.accessories')}}">All items</a></li>
+              <li><hr class="dropdown-divider bg-light"></li>
+              <li><a class="dropdown-item text-light" href="{{url_for('female_items.women_bags')}}">(W) Bags</a></li>
+              <li><a class="dropdown-item text-light" href="{{url_for('female_items.women_watches')}}">(W) Watches</a></li>
+              <li><a class="dropdown-item text-light" href="{{url_for('female_items.women_jewlry')}}">Jewlry</a></li>
+              <li><hr class="dropdown-divider bg-light"></li>
+              <li><a class="dropdown-item text-light" href="{{url_for('male_items.men_bags')}}">(M) Bags </a></li>
+              <li><a class="dropdown-item text-light" href="{{url_for('male_items.men_watches')}}">(M) Watches</a></li>
+            </ul>
+          </li>
+          
           <li class="nav-item">
-            <a class="nav-link" href="{{url_for('views.contact_us')}}">Contact Us</a>
+            <a class="nav-link active" href="{{url_for('views.contact_us')}}">Contact Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{url_for('views.about_us')}}">About Us</a>
+            <a class="nav-link active" href="{{url_for('views.about_us')}}">About Us</a>
           </li>
+          
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="{{url_for('views.accessories')}}" data-bs-toggle="dropdown" aria-expanded="false">Access</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{{url_for('auth.signup')}}">Sign Up</a></li>
-              <li><a class="dropdown-item" href="{{url_for('auth.login')}}">Login</a></li>
-              <li><a class="dropdown-item" href="{{url_for('auth.logout')}}">Logout</a></li>
+            <a class="nav-link active dropdown-toggle " href="#" data-bs-toggle="dropdown" aria-expanded="false">Access</a>
+            <ul class="dropdown-menu bg-dark">
+              <li><a class="dropdown-item text-light" href="{{url_for('auth.signup')}}">Sign Up</a></li>
+              <li><a class="dropdown-item text-light" href="{{url_for('auth.login')}}">Login</a></li>
+              <li><a class="dropdown-item text-light" href="{{url_for('auth.logout')}}">Logout</a></li>
             </ul>
           </li>
+          
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="{{url_for('views.accessories')}}" data-bs-toggle="dropdown" aria-expanded="false">Payment</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{{url_for('pay.checkout')}}">Stripe checkout</a></li>
-              <li><a class="dropdown-item" href="{{url_for('pay.success')}}">Sucessful payment</a></li>
-              <li><a class="dropdown-item" href="{{url_for('pay.cancel')}}">Cancel payment</a></li>
+            <a class="nav-link active dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Payment</a>
+            <ul class="dropdown-menu bg-dark">
+              <li><a class="dropdown-item text-light" data-bs-toggle="offcanvas" href="#shopping_cart" role="button" aria-controls="sidebar">Shopping Cart</a></li>
+              <li><a class="dropdown-item text-light" href="{{url_for('pay.cart')}}">Cart</a></li>
+              <li><hr class="dropdown-divider bg-light"></li>
+              <li><a class="dropdown-item text-light" href="{{url_for('pay.sellers_section')}}">Sellers section</a></li>
+              <li><hr class="dropdown-divider bg-light"></li>
+              <li><a class="dropdown-item text-light" href="{{url_for('pay.success')}}">Sucessful payment</a></li>
+              <li><a class="dropdown-item text-light" href="{{url_for('pay.cancel')}}">Cancel payment</a></li>
+              <li><hr class="dropdown-divider bg-light"></li>
+              <li><a class="dropdown-item text-light" href="{{url_for('pay.checkout')}}">Stripe checkout</a></li>
             </ul>
           </li>
+          
+          <!--
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="{{url_for('views.accessories')}}" data-bs-toggle="dropdown" aria-expanded="false">Testing</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{{url_for('test.database')}}">Database tests</a></li>
-              <li><a class="dropdown-item" href="{{url_for('test.payments')}}">Payment tests</a></li>
-              <li><a class="dropdown-item" href="{{url_for('test.authenticate')}}">Authentication tests</a></li>
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Testing</a>
+            <ul class="dropdown-menu bg-dark">
+              <li><a class="dropdown-item text-light" href="{{url_for('test.database')}}">Database tests</a></li>
+              <li><a class="dropdown-item text-light" href="{{url_for('test.payments')}}">Payment tests</a></li>
+              <li><a class="dropdown-item text-light" href="{{url_for('test.authenticate')}}">Authentication tests</a></li>
             </ul>
           </li>
+          -->
+          
         </ul>
-        <form role="search">
-          <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+        
+        <form role="search" method="POST">
+          <input name="nav_search" class="form-control" type="search" placeholder="Search" aria-label="Search">
         </form>
+        
       </div>
     </div>
   </nav>

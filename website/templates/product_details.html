@@ -1,0 +1,57 @@
+<!-- 
+Variables coming into this template:
+
+Website data
+tab_title - Header of the tab
+
+product data
+heading - Heading of the products (max 10)
+products - List of products to be displayed (max 10)
+-->
+
+<!-- This page is inheriting everything from the base template -->
+{% extends "base.html" %}
+
+<!-- This block tag is overriding the title block tag from the base template -->
+{% block title %} {{tab_title}} {% endblock %}
+
+<!-- This block tag is overriding the banner block tag from the base template -->
+{% block banner %} {% endblock %}
+
+<!-- This block tag is overriding the content block tag from the base template -->
+{% block content%}
+  <div class="p-5 bg-body-secondary rounded-5">
+    <div class="container">
+
+      <h1 class="text-center mb-3"> 
+        {{ product['category'][0] }}
+      </h1>
+      <hr>
+      <div class="row g-3">
+        
+        <div class="col-12 col-md-6 text-center p-3">
+          <img class="rounded-5" src={{product['image'][0]}}>
+        </div>
+        
+        <div class="col-12 col-md-6">
+          <h1 class="text-center">{{ product['product_name'] }} </h1>
+          <p ><b>Category:</b> {{ product['category'][1] }}</p>
+          <p ><b>Description:</b> {{ product['product_description'] }}</p>
+          <p ><b>Price:</b> R{{ product['price_data']['price'] }} </p>
+          
+          <form method="POST">
+            <div class="row g-3">
+              <div class="col-6">
+                <button name="add_to_cart" type="submit" class="btn btn-outline-success" value={{product['price_data']['stripe_price_id']}}>Add to cart</button>
+              </div>
+
+              <div class="col-6">
+                <button name="remove_from_cart" type="submit" class="btn btn-outline-danger"value={{product['price_data']['stripe_price_id']}}>Remove from cart</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

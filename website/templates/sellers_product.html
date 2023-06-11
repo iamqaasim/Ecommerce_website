@@ -1,0 +1,44 @@
+<!-- An offcanvas template used to perform CRUD operations for sellers -->
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="sellers_section" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Sellers section</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+      <p>You can:</p>
+      <p>- Add you Stripe products</p>
+      <p>- Find your Stripe product</p>
+      <p>- Update your Stripe product</p>
+      <p>- Delete your Stripe product</p>
+    </div>
+    <hr>
+    <form method="POST">
+    
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="add" id="inlineRadio1" value="option1">
+        <label class="form-check-label" for="inlineRadio1">add</label>
+      </div>
+      
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+        <label class="form-check-label" for="inlineRadio1">find</label>
+      </div>
+      
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+        <label class="form-check-label" for="inlineRadio1">update</label>
+      </div>
+      
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+        <label class="form-check-label" for="inlineRadio1">delete</label>
+      </div>
+      
+      <input name="product_key" placeholder="insert product key" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+
+      <button type="submit" class="btn btn-secondary">Submit</button>
+    </form>
+  </div>
+</div>

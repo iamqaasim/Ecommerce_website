@@ -1,0 +1,177 @@
+<!-- 
+Variables coming into this template:
+
+variable - 
+
+-->
+
+
+<!-- This page is inheriting everything from the base template -->
+{% extends "base.html" %}
+
+<!-- This block tag is overriding the title block tag from the base template -->
+{% block title %} Sellers Section {% endblock %}
+
+
+<!-- This block tag is overriding the content block tag from the base template -->
+{% block content%}
+<div class="p-5 mb-4 bg-body-secondary rounded-3">
+  <div class="container-fluid ">
+    
+    <form class="mt-3 mb-5" method="POST">
+      
+      <div class="row g-2 text-center">
+        
+        <div class="col-12 col-md-8 col-lg-4">
+          <input name="product_key" placeholder="insert product key" type="text" class="form-control" >
+        </div>
+        
+        <div class="col-12 col-md-4 col-lg-2 ">
+          <select name="operation" class="form-select" type="text">
+            <option selected="">operation:</option>
+            <option value="Add">Add</option>
+            <option value="Find">Find</option>
+            <option value="Update">Update</option>
+            <option value="Delete">Delete</option>
+          </select>
+        </div>
+            
+        <div class="col-12 col-md-5 col-lg-3">
+          <select name="category" class="form-select " type="text">
+            <option selected="">category:</option>
+            <option value="Male clothing">Male clothing</option>
+            <option value="Male accessory">Male accessory</option>
+            <option value="Female clothing">Female clothing</option>
+            <option value="Female accessory">Female accessory</option>
+          </select>
+        </div>
+
+        <div class="col-12 col-md-5 col-lg-2">
+          <select name="sub_category" class="form-select " type="text">
+            <option selected="">sub-category:</option>
+            <option value="Sweater">Sweater</option>
+            <option value="Shirt">Shirt</option>
+            <option value="Jersey">Jersey</option>
+            <option value="Jacket">Jacket</option>
+            <option value="Skirt">Skirt</option>
+            <option value="Pants">Pants</option>
+            <option value="Bag">Bag</option>
+            <option value="Jewlry">Jewlry</option>
+            <option value="Watch">Watch</option>
+          </select>
+        </div>
+          
+        <div class="col-1">
+          <button class="btn btn-outline-secondary" type="submit">Submit</button>
+        </div>
+        
+      </div>
+    </form>
+
+    <section class="text-center">
+      
+      <div class="mb-3">
+        <hr>
+        <h3> What to do with your Stripe product key: </h3>
+        <p>NOTE: "category" and "sub-category" is only necessary for adding and updating products</p>
+      </div>
+      
+      <div class="mb-3">
+        <hr>
+        <h4> Select operation: </h4>
+      </div>
+
+       
+      <div class="row g-3 mb-3">
+        <div class="col-12 col-md-6 col-lg-3">
+          - Add your Stripe product
+        </div>
+        
+        <div class="col-12 col-md-6 col-lg-3">
+          - Find your Stripe product
+        </div>
+        
+        <div class="col-12 col-md-6 col-lg-3">
+          - Update your Stripe product
+        </div>
+        
+        <div class="col-12 col-md-6 col-lg-3">
+          - Delete your Stripe product
+        </div>
+      </div>
+      
+      <div class="mb-3">
+        <hr>
+        <h4> Select it's category: </h4> 
+      </div>
+
+       <div class="row g-3 mb-3">
+        <div class="col-6 col-lg-3">
+          - Male Clothing
+        </div>
+        
+        
+        <div class="col-6 col-lg-3">
+          - Male Accessories
+        </div>
+
+        <div class="col-6 col-lg-3">
+          - Female Clothing
+        </div>
+
+        <div class="col-6 col-lg-3">
+          - Female Accessories
+        </div>
+        
+      </div>
+
+      <div class="mb-3">
+        <hr>
+        <h4> Select it's sub-category: </h4>
+      </div>
+
+       <div class="row g-3 mb-3">
+        <div class="col-4 ">
+          - Sweater
+        </div>
+        
+        <div class="col-4">
+          - Shirt
+        </div>
+        
+        <div class="col-4">
+          - Jersey
+        </div>
+
+        <div class="col-4">
+          - Jacket
+        </div>
+
+        <div class="col-4">
+          - Skirt
+        </div>
+        
+        <div class="col-4">
+          - Pants
+        </div>
+        
+        <div class="col-4">
+          - Bag
+        </div>
+
+        <div class="col-4">
+          - Jewlry
+        </div>
+
+        <div class="col-4">
+          - Watch
+        </div>
+        
+        
+      </div>
+  
+    </section>
+  </div>
+</div>
+
+{% endblock %}

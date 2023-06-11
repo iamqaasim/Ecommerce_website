@@ -1,0 +1,22 @@
+<!-- An offcanvas template used to display the shopping cart items -->
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="shopping_cart" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Shopping Cart</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+      This is wher all your cart items will be displayed
+    </div>
+    <div class="dropdown mt-3">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+        Actions
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="{{url_for('pay.checkout')}}">Checkout</a></li>
+        <li><a class="dropdown-item" href="#">Clear cart</a></li>
+      </ul>
+    </div>
+  </div>
+</div>

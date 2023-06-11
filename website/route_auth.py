@@ -15,6 +15,8 @@ from.db_main import *
 from .db_auth import *
 # import db connection variables
 from .connections import *
+# Import shopping cart functions
+from .cart import *
 
 
 # initiate blueprint called "auth"
@@ -98,7 +100,6 @@ def signup():
     else:
       flash('Please enter valid email address', category='error')
   return render_template("signup.html")
-  
 
 
 @auth.route('/login', methods=['POST', 'GET'])
@@ -129,7 +130,7 @@ def login():
     # request form data
     request_user = request.form['username']
     request_password = request.form['password']
-    
+    print(request.form['submit'])
     # check if user exist
     valid_user = validate_login(request_user, request_password)
 
@@ -141,7 +142,7 @@ def login():
       
       # set session timer
       session.permanent = True
-      #set session variable
+      # set session variable
       session["user"] = request_user
       
       flash('Welcome Back! You are now logged in', category='success')
@@ -160,12 +161,10 @@ def logout():
     redirect to login page
   '''
   if "user" in session:
-    flash(f'Logged out {session["user"]}.', category='error')
-
+    flash(f'Logged out of account {session["user"]}.', category='error')
     #remove session data
     session.pop("user", None)
-    
-    return redirect(url_for('views.login'))
+    return redirect(url_for('auth.login'))
   else:
     flash("You're not logged in", category='error')
     return redirect(url_for('auth.login'))

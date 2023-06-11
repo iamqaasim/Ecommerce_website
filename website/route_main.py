@@ -219,6 +219,29 @@ def about_us():
   Return:
     about us page
   '''
+  if request.method == 'POST':
+    # handle product post requests
+    post_requests = post_request_handler(nav_search(), details_page(), add_to_cart(), clear_cart(), remove_from_cart())
+    
+    
+    if post_requests == 'add to cart':
+      flash(f'Item added to cart', category='success')
+    elif post_requests == 'not add to cart':
+      flash(f'ERROR: Item NOT added', category='error')
+    elif post_requests == 'clear cart':
+      flash(f'Cart cleard!', category='success')
+    elif post_requests == 'not clear cart':
+      flash(f'ERROR: Cart NOT cleared', category='error')
+    elif post_requests == 'item removed from cart':
+      flash(f'Item removed from cart', category='success')
+    elif post_requests == 'item not in cart':
+      flash(f'Item not in cart', category='error')
+    elif post_requests == 'item not removed from cart':
+      flash(f'ERROR: Item NOT removed', category='error')
+    elif post_requests != 0:
+      return post_requests
+    else:
+     return render_template("about_us.html")
   return render_template("about_us.html")
 
 

@@ -32,17 +32,21 @@ def checkout():
   
   cart = session.get('cart_items', [])
   
-  try:
-    checkout_sesion = stripe.checkout.Session.create(
-      line_items = cart,
-      mode="payment",
-      # redirect after successful payment
-      success_url=url_for('pay.success', _external=True),
-      # redirect after canceled payment
-      cancel_url=url_for('pay.cart', _external=True)
-    )
-  except Exception as e:
-    return str(e)
+  if cart:
+    try:
+      checkout_sesion = stripe.checkout.Session.create(
+        line_items = cart,
+        mode="payment",
+        # redirect after successful payment
+        success_url=url_for('pay.success', _external=True),
+        # redirect after canceled payment
+        cancel_url=url_for('pay.cart', _external=True)
+      )
+    except Exception as e:
+      return str(e)
+  else:
+    flash(f'You cart is empty!', category='warning')
+    return redirect(url_for('views.home'))
   # when we navigate to the checkout url we are redirected to stripes payment page
   return redirect(checkout_sesion.url, code=303)
 

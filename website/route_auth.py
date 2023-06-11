@@ -45,9 +45,8 @@ def signup():
       login user
       redirects to home page
   '''
-  
   if "user" in session:
-      flash("You're already logged in", category='success')
+    flash("You're already logged in", category='success')
 
   if request.method == 'POST':
     # request form data
@@ -122,7 +121,6 @@ def login():
       login user
       redirects to home page
   '''
-  
   if "user" in session:
     flash("You're already logged in", category='success')
   
@@ -144,6 +142,7 @@ def login():
       session.permanent = True
       # set session variable
       session["user"] = request_user
+      
       
       flash('Welcome Back! You are now logged in', category='success')
       return redirect(url_for('views.home'))

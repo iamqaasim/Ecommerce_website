@@ -17,9 +17,11 @@
 
   </head>
   <body>
-    {% block nav %} {% include 'nav.html' %} {% endblock %}
+    
+    {% include 'nav.html' %}
     <!-- add space for the nav bar so that it doesnt overlap the content of the pages -->
     <div style="height: 56px"></div>
+    
 
     <!-- Offcanvas templates -->
     {% include 'shopping_cart.html' %}
@@ -63,6 +65,6 @@
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" 
       crossorigin="anonymous"
     ></script>
-    {% block footer %} {% include 'footer.html' %} {% endblock %}
+    {% include 'footer.html' %}
   </body>
 </html>

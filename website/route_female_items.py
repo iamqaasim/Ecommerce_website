@@ -40,7 +40,7 @@ def women_clothing():
   products6 = filter_by_category("Female clothing", "Jacket")
   # get all female accessory products
   products7 = filter_by_category("Female accessory", "Bag")
-  products8 = filter_by_category("Female accessory", "Jewlry")
+  products8 = filter_by_category("Female accessory", "Jewelry")
   products9 = filter_by_category("Female accessory", "Watch")
 
   if request.method == 'POST':
@@ -471,10 +471,10 @@ def women_watches():
                          heading1="Watches", 
                          products1=products1,)
 
-@female_items.route('/women_jewlry', methods=['POST', 'GET'])
-def women_jewlry():
+@female_items.route('/women_jewelry', methods=['POST', 'GET'])
+def women_jewelry():
   '''
-  Create a route for the women_jewlry page
+  Create a route for the women_jewelry page
 
   Functionality:
   add item to cart
@@ -484,7 +484,7 @@ def women_jewlry():
   '''
 
   # get all male shirt products
-  products1 = filter_by_category("Female accessory", "Jewlry")
+  products1 = filter_by_category("Female accessory", "Jewelry")
 
   if request.method == 'POST':
     # handle product post requests
@@ -510,10 +510,10 @@ def women_jewlry():
     else:
      return render_template("product_list.html", 
                          tab_title="Female Items", 
-                         heading1="Jewlry", 
+                         heading1="Jewelry", 
                          products1=products1,)
       
   return render_template("product_list.html", 
                          tab_title="Female Items", 
-                         heading1="Jewlry", 
+                         heading1="Jewelry", 
                          products1=products1,)

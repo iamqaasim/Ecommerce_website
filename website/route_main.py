@@ -102,7 +102,7 @@ def accessories():
     Product list template with Accessory sections that are dynamically added based on their inputs
   '''
   # get all jewlry
-  products1 = filter_by_category("Female accessory", "Jewlry")
+  products1 = filter_by_category("Female accessory", "Jewelry")
   # get all watches
   products2 = filter_by_category("Female accessory", "Watch")
   products3 = filter_by_category("Male accessory", "Watch")
@@ -134,7 +134,7 @@ def accessories():
     else:
      return render_template("product_list.html", 
                          tab_title="All Accessory items", 
-                         heading1="Jewlry", 
+                         heading1="Jewelry", 
                          products1=products1,
                          section2="Watches",
                          heading2="Female watches", 
@@ -149,7 +149,7 @@ def accessories():
       
   return render_template("product_list.html", 
                          tab_title="All Accessory items", 
-                         heading1="Jewlry", 
+                         heading1="Jewelry", 
                          products1=products1,
                          section2="Watches",
                          heading2="Female watches", 
@@ -279,7 +279,7 @@ def all_products():
   products6 = filter_by_category("Female clothing", "Jacket")
   # get all female accessory products
   products7 = filter_by_category("Female accessory", "Bag")
-  products8 = filter_by_category("Female accessory", "Jewlry")
+  products8 = filter_by_category("Female accessory", "Jewelry")
   products9 = filter_by_category("Female accessory", "Watch")
   # get all male clothing products
   products10 = filter_by_category("Male clothing", "Shirt")
@@ -338,8 +338,8 @@ def all_products():
                          section14="Bags",
                          heading14="Bags (female)", products14=products7,
                          heading15="Bags (male)", products15=products15,
-                         section16="Jewlry",
-                         heading16="Jewlry (female)", products16=products8,)
+                         section16="Jewelry",
+                         heading16="Jewelry (female)", products16=products8,)
       
   return render_template("product_list.html", 
                          tab_title="All products",
@@ -366,5 +366,5 @@ def all_products():
                          section14="Bags",
                          heading14="Bags (female)", products14=products7,
                          heading15="Bags (male)", products15=products15,
-                         section16="Jewlry",
-                         heading16="Jewlry (female)", products16=products8,)
+                         section16="Jewelry",
+                         heading16="Jewelry (female)", products16=products8,)

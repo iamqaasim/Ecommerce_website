@@ -1,45 +1,78 @@
 
-# Ecommerce_website
+# Ecommerce Website
 
-A simple Ecommerce site in development..
+A simple website that enables businesses to buy and sell products or services over the internet. It allows customers to browse and select items, add them to a virtual shopping cart, and complete their purchase through a secure online payment system. 
 
 
 ## Authors
 
 - [@iamqaasim](https://github.com/iamqaasim)
-- [@Johnmalek](https://github.com/johnmalek)
-
-## Tech Stack
-
-**Frontend:** HTML, Bootstrap
-
-**Backend:** Flask, Stripe, MongoDB
-
-**Web host:** Render
-
-**We used:**\
-**Flask** to create a quickserver side backend,\
-**HTML and Bootstrap** to create our templates,\
-**Stripe** to handle payments,\
-**SQLite** (flask's built-in database) to handle the authentication as well as manage the CRUD process.
-## Dependencies 
-
-To install all the dependencies we used to build this site
-run: 
-
-```pip install -r requirements.txt```
 
 
+## Languages and Technologies
 
+**Client:** HTML, Bootstrap 
+
+**Server:** Python, Flask
+
+**Database:** MongoDB
+
+**APIs:** Stripe, Gmail
+
+**Webhost:** Render
+
+**IDE:** Replit
+
+
+## Dependencies
+
+To install necessary dependencies copy the requirements file into your project. In the same directory as your requirments.txt file run the following command:
+
+```bash
+  pip install -r requirements.txt
+```
+    
 ## Related
 
-Here are the related project links:
+Here are some related sites and documentation
 
-[View live site](https://ecommerse-website-lzza.onrender.com/)
+[Live Site](https://ecommerse-website-lzza.onrender.com/)
+
+[Mock Site](https://646bbba492031.site123.me/)
+
+[PowerPoint Summary Presentation](https://www.youtube.com/)
 
 
+## Roadmap
+
+- **Phase 0:** Planning
+I excel when I have a clear objective to guide my work. By creating a prototype website and mapping out the necessary steps, I not only gained a visual representation of the potential design, but also enhanced it through iterative improvements.
+
+- **Phase 1:** Setup and connection
+Setup and seamlessly integrating all the essential technologies.
+
+- **Phase 2:** CRUD operations
+Created the auxiliary functions that facilitate interactions with MongoDB, enabling a comprehensive spectrum of indispensable CRUD (Create, Read, Update, Delete) operations.
+
+- **Phase 3:** Payment
+Created my Stripe account and integrated it with my application, utilizing the robust Stripe API to facilitate secure and efficient payment processing.
+
+- **Phase 4:** User authentication
+Created necessary authentication functions to ensure safety and security of sensitive infomation (such as passwords).
+
+- **Phase 5:** UI and UX design
+The objective was to craft an intuitive design while maintaining exceptional functionality.
+
+- **Phase 6:** Details
+I edicated my efforts to meticulously refining the site, paying utmost attention to the finer details. Additionally, I cleaned up the site to enhance its overall quality.
+
+- **Phase 7:** Presentation and documentation
+Throughout the development process, I diligently undertook the task of meticulously documenting each phase of my work, embracing a methodical approach to my learning. This deliberate practice ensured that I captured all the essential intricacies, providing comprehensive details that would greatly assist others in successfully recreating my work.
+
+[Written documentation]()
+
+[Video presentation]()
 
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
-

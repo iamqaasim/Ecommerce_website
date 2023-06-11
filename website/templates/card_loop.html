@@ -11,21 +11,21 @@
           <p class="card-text"><b>Price:</b> R{{ product['price_data']['price'] }} </p>
           
           <form class="text-center" method="POST">
-            <div class="row g-2 justify-content-evenly">
+            <div class="row g-2 ">
               
-              <div class="col-4 col-md-12 col-xl-2">
+              <div class="col-2 col-md-12 col-xl-2">
                 <button name="product" type="submit" class="btn btn-outline-primary" value={{product['stripe_product_id']}}>
                   info
                 </button>
               </div>
               
-              <div class="col-4 col-md-6 col-xl-5">
+              <div class="col-5 col-md-6 col-xl-5">
                 <button name="add_to_cart" type="submit" class=" btn btn-outline-success" value={{product['price_data']['stripe_price_id']}}>
                  add to cart
                 </button>
               </div>
               
-              <div class="col-4 col-md-6 col-xl-5">
+              <div class="col-5 col-md-6 col-xl-5">
                 <button name="remove_from_cart" type="submit" class="btn btn-outline-warning"value={{product['price_data']['stripe_price_id']}}>
                 remove item
                 </button>

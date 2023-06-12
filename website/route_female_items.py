@@ -53,7 +53,7 @@ def women_clothing():
     elif post_requests == 'not add to cart':
       flash(f'ERROR: Item NOT added', category='error')
     elif post_requests == 'clear cart':
-      flash(f'Cart cleard!', category='success')
+      flash(f'Cart cleared!', category='success')
     elif post_requests == 'not clear cart':
       flash(f'ERROR: Cart NOT cleared', category='error')
     elif post_requests == 'item removed from cart':
@@ -120,7 +120,7 @@ def women_shirts():
     elif post_requests == 'not add to cart':
       flash(f'ERROR: Item NOT added', category='error')
     elif post_requests == 'clear cart':
-      flash(f'Cart cleard!', category='success')
+      flash(f'Cart cleared!', category='success')
     elif post_requests == 'not clear cart':
       flash(f'ERROR: Cart NOT cleared', category='error')
     elif post_requests == 'item removed from cart':
@@ -167,7 +167,7 @@ def women_sweaters():
     elif post_requests == 'not add to cart':
       flash(f'ERROR: Item NOT added', category='error')
     elif post_requests == 'clear cart':
-      flash(f'Cart cleard!', category='success')
+      flash(f'Cart cleared!', category='success')
     elif post_requests == 'not clear cart':
       flash(f'ERROR: Cart NOT cleared', category='error')
     elif post_requests == 'item removed from cart':
@@ -214,7 +214,7 @@ def women_jerseys():
     elif post_requests == 'not add to cart':
       flash(f'ERROR: Item NOT added', category='error')
     elif post_requests == 'clear cart':
-      flash(f'Cart cleard!', category='success')
+      flash(f'Cart cleared!', category='success')
     elif post_requests == 'not clear cart':
       flash(f'ERROR: Cart NOT cleared', category='error')
     elif post_requests == 'item removed from cart':
@@ -261,7 +261,7 @@ def women_jackets():
     elif post_requests == 'not add to cart':
       flash(f'ERROR: Item NOT added', category='error')
     elif post_requests == 'clear cart':
-      flash(f'Cart cleard!', category='success')
+      flash(f'Cart cleared!', category='success')
     elif post_requests == 'not clear cart':
       flash(f'ERROR: Cart NOT cleared', category='error')
     elif post_requests == 'item removed from cart':
@@ -308,7 +308,7 @@ def women_pants():
     elif post_requests == 'not add to cart':
       flash(f'ERROR: Item NOT added', category='error')
     elif post_requests == 'clear cart':
-      flash(f'Cart cleard!', category='success')
+      flash(f'Cart cleared!', category='success')
     elif post_requests == 'not clear cart':
       flash(f'ERROR: Cart NOT cleared', category='error')
     elif post_requests == 'item removed from cart':
@@ -355,7 +355,7 @@ def women_skirts():
     elif post_requests == 'not add to cart':
       flash(f'ERROR: Item NOT added', category='error')
     elif post_requests == 'clear cart':
-      flash(f'Cart cleard!', category='success')
+      flash(f'Cart cleared!', category='success')
     elif post_requests == 'not clear cart':
       flash(f'ERROR: Cart NOT cleared', category='error')
     elif post_requests == 'item removed from cart':
@@ -402,7 +402,7 @@ def women_bags():
     elif post_requests == 'not add to cart':
       flash(f'ERROR: Item NOT added', category='error')
     elif post_requests == 'clear cart':
-      flash(f'Cart cleard!', category='success')
+      flash(f'Cart cleared!', category='success')
     elif post_requests == 'not clear cart':
       flash(f'ERROR: Cart NOT cleared', category='error')
     elif post_requests == 'item removed from cart':
@@ -449,7 +449,7 @@ def women_watches():
     elif post_requests == 'not add to cart':
       flash(f'ERROR: Item NOT added', category='error')
     elif post_requests == 'clear cart':
-      flash(f'Cart cleard!', category='success')
+      flash(f'Cart cleared!', category='success')
     elif post_requests == 'not clear cart':
       flash(f'ERROR: Cart NOT cleared', category='error')
     elif post_requests == 'item removed from cart':
@@ -496,7 +496,7 @@ def women_jewelry():
     elif post_requests == 'not add to cart':
       flash(f'ERROR: Item NOT added', category='error')
     elif post_requests == 'clear cart':
-      flash(f'Cart cleard!', category='success')
+      flash(f'Cart cleared!', category='success')
     elif post_requests == 'not clear cart':
       flash(f'ERROR: Cart NOT cleared', category='error')
     elif post_requests == 'item removed from cart':

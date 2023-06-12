@@ -31,17 +31,6 @@ To install necessary dependencies copy the requirements file into your project. 
 ```bash
   pip install -r requirements.txt
 ```
-    
-## Related
-
-Here are some related sites and documentation
-
-[Live Site](https://ecommerse-website-lzza.onrender.com/)
-
-[Mock Site](https://646bbba492031.site123.me/)
-
-[PowerPoint Summary Presentation](https://docs.google.com/presentation/d/1-YeAtHkC6-vlPn4oF8t_tMAJ1MDLQBvuGRyTLeGBIKM/edit?usp=sharing)
-
 
 ## Roadmap
 
@@ -69,9 +58,21 @@ I edicated my efforts to meticulously refining the site, paying utmost attention
 - **Phase 7:** Presentation and documentation
 Throughout the development process, I diligently undertook the task of meticulously documenting each phase of my work, embracing a methodical approach to my learning. This deliberate practice ensured that I captured all the essential intricacies, providing comprehensive details that would greatly assist others in successfully recreating my work.
 
+
+## Related
+
+Here are some related sites and documentation
+
+[Live Site](https://ecommerse-website-lzza.onrender.com/)
+
+[Mock Site](https://646bbba492031.site123.me/)
+
+[PowerPoint Summary Presentation](https://docs.google.com/presentation/d/1-YeAtHkC6-vlPn4oF8t_tMAJ1MDLQBvuGRyTLeGBIKM/edit?usp=sharing)
+
 [Written documentation](https://docs.google.com/document/d/1GNdzk-zRL0tvaK3ymhFKtCd2avSzReJCGX-cWgbNEEU/edit?usp=sharing)
 
 [Video presentation]()
+
 
 ## License
 

@@ -1,8 +1,8 @@
 # NOTE: 
 I've Blocked Signups due to build up of inactive users. To test website user credentials below
 
-Username: Tester
-Password: testpass
+## Username: Tester
+## Password: testpass
 
 # Ecommerce Website
 

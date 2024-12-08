@@ -71,8 +71,6 @@ Here are some related sites and documentation
 
 [Live Site](https://ecommerse-website-lzza.onrender.com/)
 
-[Mock Site](https://646bbba492031.site123.me/)
-
 [PowerPoint Summary Presentation](https://docs.google.com/presentation/d/1-YeAtHkC6-vlPn4oF8t_tMAJ1MDLQBvuGRyTLeGBIKM/edit?usp=sharing)
 
 [Written documentation](https://docs.google.com/document/d/1GNdzk-zRL0tvaK3ymhFKtCd2avSzReJCGX-cWgbNEEU/edit?usp=sharing)
